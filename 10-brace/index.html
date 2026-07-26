@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — Pizzeria &amp; Trattoria, Arbia (Siena)</title>
+<meta name="description" content="Piccolo Mondo — pizzeria e trattoria ad Arbia (Siena) dal 1985.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#menu">Menu</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="mark" href="#top">Piccolo Mondo</a>
+    <nav class="nav" aria-label="Principale">
+      <a href="#menu" data-i18n="nav_menu">Menu</a>
+      <a href="#contatti" data-i18n="nav_contatti">Contatti</a>
+      <a href="#allergeni" data-i18n="nav_allergeni">Allergeni</a>
+    </nav>
+    <div class="lang" role="group" id="langgroup" aria-label="Lingua">
+      <button type="button" id="lang-it" data-lang="it" aria-pressed="true">IT</button>
+      <span class="lang-sep" aria-hidden="true">/</span>
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="hero_eyebrow">dal 1985</p>
+      <h1 class="wordmark">Piccolo Mondo</h1>
+      <p class="rule" aria-hidden="true">&#9670;</p>
+      <p class="tagline" id="tagline">Pizzeria &amp; Trattoria dal 1985</p>
+      <p><a class="cta" href="#menu" data-i18n="hero_cta">Scopri il menu</a></p>
+    </div>
+  </section>
+
+  <section id="menu" class="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <h2 class="section-title" id="menu-title" data-i18n="menu_title">Menu</h2>
+      <noscript><p class="noscript">Per visualizzare il menu è necessario attivare JavaScript. — The menu requires JavaScript to be enabled.</p></noscript>
+      <div id="menu-root"></div>
+    </div>
+  </section>
+
+  <section id="contatti" class="contatti" aria-labelledby="contatti-title">
+    <div class="wrap">
+      <h2 class="section-title" id="contatti-title" data-i18n="contatti_title">Contatti</h2>
+      <dl class="facts">
+        <dt data-i18n="label_address">Indirizzo</dt>
+        <dd><a id="address-link" href="#">54/56 Piazza della Repubblica, 53041 Arbia (Siena)</a></dd>
+        <dt data-i18n="label_phone">Telefono</dt>
+        <dd><a id="phone-link" href="#">0577 364208</a></dd>
+        <dt data-i18n="label_hours">Orari</dt>
+        <dd><span id="hours"></span><br><span class="dim" id="closed"></span></dd>
+        <dt data-i18n="label_follow">Seguici</dt>
+        <dd class="social"><a id="fb-link" href="#">Facebook</a> <span class="dot" aria-hidden="true">&middot;</span> <a id="ig-link" href="#">Instagram</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="allergeni" class="allergeni" aria-labelledby="allergeni-title">
+    <div class="wrap">
+      <h2 class="small-title" id="allergeni-title" data-i18n="allergeni_title">Allergeni</h2>
+      <p class="legal" id="allergeni-text" data-i18n="allergeni_text"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><span class="fmark">Piccolo Mondo</span> <span class="dot" aria-hidden="true">&middot;</span> Arbia (Siena) <span class="dot" aria-hidden="true">&middot;</span> <span id="year"></span></p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

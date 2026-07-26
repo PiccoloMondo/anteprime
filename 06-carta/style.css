@@ -1,0 +1,416 @@
+/* Piccolo Mondo — 06-carta: deep olive & sage, printed menu card */
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/eb-garamond-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/eb-garamond-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/eb-garamond-400-italic.woff2") format("woff2");
+}
+
+:root {
+  --bg: #171a15;
+  --bg-soft: #1d211a;
+  --line: #2f352a;
+  --accent: #b9c39a;
+  --text: #ece9df;
+  --text-dim: #a3a396;
+  --serif: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+noscript {
+  display: block;
+  background: #3a2a1a;
+  color: #f4e9d8;
+  text-align: center;
+  padding: 0.75rem 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+.lang-toggle {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.lang-toggle button {
+  font-family: var(--serif);
+  background: transparent;
+  color: var(--text-dim);
+  border: none;
+  padding: 0.4rem 0.75rem;
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.lang-toggle button + button {
+  border-left: 1px solid var(--line);
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  background: var(--bg-soft);
+  color: var(--accent);
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 3.5rem 0;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 4rem 0 3rem;
+}
+
+.eyebrow {
+  font-variant: small-caps;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 7vw, 3.2rem);
+  margin: 0 0 1rem;
+  letter-spacing: 0.01em;
+}
+
+.hero-tagline {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 1.05rem;
+  margin: 0 auto 2rem;
+  max-width: 32rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ---------- Section titles (top-level) ---------- */
+.section-title {
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 2.5rem;
+}
+
+/* ---------- Category headings: hairline-flanked, centered ---------- */
+.category {
+  margin: 0 0 3rem;
+}
+
+.category-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.category-heading hr {
+  flex: 1 1 auto;
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+.category-heading span {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--text);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* Typographic divider between food and drink groups */
+.group-divider {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  margin: 3.5rem 0;
+  opacity: 0.7;
+}
+
+/* ---------- Dish grid ---------- */
+.dish-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem 2rem;
+}
+
+@media (min-width: 820px) {
+  .dish-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dish {
+  break-inside: avoid;
+}
+
+.dish-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.dish-name {
+  white-space: normal;
+}
+
+.dish-leader {
+  flex: 1 1 auto;
+  border-bottom: 1px dotted var(--line);
+  min-width: 0.75rem;
+  margin-bottom: 0.3em;
+}
+
+.dish-price {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.dish-description {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0.15rem 0 0;
+}
+
+/* Sized items (bibite, vini) */
+.dish-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1rem;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.dish-sizes .size-item {
+  white-space: nowrap;
+}
+
+.dish-sizes .size-label {
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  margin-right: 0.25em;
+}
+
+.dish-sizes .size-value {
+  color: var(--accent);
+}
+
+/* ---------- Info sections (contatti / allergeni) ---------- */
+.info-section {
+  text-align: center;
+}
+
+.contact-list {
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-list div {
+  margin: 0;
+}
+
+.contact-list dt {
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin: 0 0 0.2rem;
+}
+
+.contact-list dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.contact-list a {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-dim);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.allergeni-text {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.25rem 3.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

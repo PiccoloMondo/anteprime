@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — Pizzeria &amp; Trattoria, Arbia (Siena)</title>
+<meta name="description" content="Piccolo Mondo — pizzeria e trattoria ad Arbia (Siena) dal 1985. Menu, orari e contatti.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#menu">Vai al menu</a>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#top">Piccolo&nbsp;Mondo</a>
+    <nav class="site-nav" aria-label="Principale">
+      <ul>
+        <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+        <li class="nav-tertiary"><a href="#contatti" data-i18n="nav_contatti">Contatti</a></li>
+        <li class="nav-secondary"><a href="#allergeni" data-i18n="nav_allergeni">Allergeni</a></li>
+      </ul>
+    </nav>
+    <div class="lang" role="group" aria-label="Lingua" id="lang-group">
+      <button type="button" class="lang-btn" data-lang="it" aria-pressed="true">IT</button>
+      <span class="lang-sep" aria-hidden="true">·</span>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<noscript>
+  <p class="noscript">Questo menu richiede JavaScript. Attivalo per vedere i piatti. — This menu requires JavaScript.</p>
+</noscript>
+
+<main id="top">
+
+  <section class="hero band band--bg" aria-labelledby="hero-title">
+    <div class="shell hero-inner">
+      <p class="eyebrow" data-i18n="hero_eyebrow">dal 1985</p>
+      <h1 class="wordmark" id="hero-title">Piccolo Mondo</h1>
+      <p class="mark" aria-hidden="true">— &#9670; —</p>
+      <p class="tagline" id="hero-tagline"></p>
+      <a class="cta" href="#menu" data-i18n="hero_cta">Scopri il menu</a>
+    </div>
+  </section>
+
+  <section id="menu" class="menu" aria-labelledby="menu-title">
+    <h2 class="sr-only" id="menu-title" data-i18n="menu_title">Menu</h2>
+  </section>
+
+  <section id="contatti" class="band band--soft" aria-labelledby="contatti-title">
+    <div class="shell">
+      <h2 class="band-title" id="contatti-title" data-i18n="contatti_title">Contatti</h2>
+      <p class="band-rule" aria-hidden="true"></p>
+      <dl class="contact">
+        <div class="contact-row">
+          <dt data-i18n="label_address">Indirizzo</dt>
+          <dd><a id="c-address" class="link" href="#" rel="noopener noreferrer" target="_blank"></a></dd>
+        </div>
+        <div class="contact-row">
+          <dt data-i18n="label_phone">Telefono</dt>
+          <dd><a id="c-phone" class="link" href="#"></a></dd>
+        </div>
+        <div class="contact-row">
+          <dt data-i18n="label_hours">Orari</dt>
+          <dd><span id="c-hours"></span><br><span class="dim" id="c-closed"></span></dd>
+        </div>
+        <div class="contact-row">
+          <dt data-i18n="label_follow">Seguici</dt>
+          <dd class="social">
+            <a class="link" id="c-fb" href="#" rel="noopener noreferrer" target="_blank">Facebook</a>
+            <span class="dot" aria-hidden="true">·</span>
+            <a class="link" id="c-ig" href="#" rel="noopener noreferrer" target="_blank">Instagram</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="allergeni" class="band band--bg band--quiet" aria-labelledby="allergeni-title">
+    <div class="shell">
+      <h2 class="band-title band-title--small" id="allergeni-title" data-i18n="allergeni_title">Allergeni</h2>
+      <p class="band-rule" aria-hidden="true"></p>
+      <p class="allergeni-text" data-i18n="allergeni_text"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <p class="footer-mark" aria-hidden="true">&#9670;</p>
+    <p class="footer-line"><span id="footer-year"></span> &middot; Piccolo Mondo &middot; Arbia (Siena)</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

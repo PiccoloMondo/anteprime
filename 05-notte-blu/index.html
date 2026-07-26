@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — Arbia, Siena</title>
+<meta name="description" content="Piccolo Mondo — Pizzeria &amp; Trattoria dal 1985, Arbia (Siena).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript>Questo menu richiede JavaScript per essere visualizzato. / This menu requires JavaScript to be displayed.</noscript>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Navigazione principale">
+    <a class="brand" href="#top">Piccolo Mondo</a>
+    <ul class="nav-links">
+      <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+      <li><a href="#allergeni" data-i18n="nav_allergeni">Allergeni</a></li>
+      <li><a href="#contatti" data-i18n="nav_contatti">Contatti</a></li>
+    </ul>
+    <div class="lang-toggle" role="group" aria-label="Lingua">
+      <button type="button" id="lang-it" data-lang="it" aria-pressed="true">IT</button>
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <h1 class="hero-wordmark">Piccolo Mondo</h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">dal 1985</p>
+      <p class="hero-tagline" id="hero-tagline"></p>
+    </div>
+    <a class="scroll-cue" href="#menu" data-i18n="hero_cta">Scopri il menu</a>
+  </section>
+
+  <section class="menu-section" id="menu" aria-labelledby="menu-title">
+    <h2 class="section-title" id="menu-title" data-i18n="menu_title">Menu</h2>
+    <div class="accordion" id="accordion"></div>
+  </section>
+
+  <section class="contact-section" id="contatti" aria-labelledby="contatti-title">
+    <h2 class="section-title" id="contatti-title" data-i18n="contatti_title">Contatti</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="label_address">Indirizzo</span>
+        <a class="contact-value" id="contact-address" href="#" target="_blank" rel="noopener"></a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="label_phone">Telefono</span>
+        <a class="contact-value" id="contact-phone" href="#"></a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="label_hours">Orari</span>
+        <span class="contact-value" id="contact-hours"></span>
+        <span class="contact-closed" id="contact-closed"></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label" data-i18n="label_follow">Seguici</span>
+        <div class="social-links">
+          <a id="social-facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+          <a id="social-instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="allergeni-section" id="allergeni" aria-labelledby="allergeni-title">
+    <h2 class="section-title" id="allergeni-title" data-i18n="allergeni_title">Allergeni</h2>
+    <p class="allergeni-text" id="allergeni-text" data-i18n="allergeni_text"></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="footer-year"></span> Piccolo Mondo — Arbia, Siena</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

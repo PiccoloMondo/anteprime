@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — dal 1985, Arbia (Siena)</title>
+<meta name="description" content="Piccolo Mondo, pizzeria e trattoria ad Arbia (Siena) dal 1985. Menu, orari e contatti.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="logo" href="#top">Piccolo <em>Mondo</em></a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#allergeni">Allergeni</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">— dal 1985 —</p>
+    <h1>Piccolo Mondo</h1>
+    <p class="hero-sub">Pizzeria &amp; Trattoria, Arbia · Siena</p>
+    <a class="btn" href="#menu">Scopri il menu</a>
+  </div>
+</section>
+
+<main id="menu" class="wrap menu-wrap">
+  <h2 class="section-title">Menu</h2>
+  <div class="tabs" id="tabs"></div>
+  <div class="tab-panels" id="panels"></div>
+</main>
+
+<section id="allergeni" class="allergeni">
+  <div class="wrap">
+    <h2 class="section-title">Allergeni</h2>
+    <p id="allergeni-text"></p>
+  </div>
+</section>
+
+<section id="contatti" class="contatti">
+  <div class="wrap contatti-grid">
+    <div>
+      <h2 class="section-title">Contatti</h2>
+      <p><span class="label">Indirizzo</span><br><span id="c-address"></span></p>
+      <p><span class="label">Telefono</span><br><a id="c-phone" href="#"></a></p>
+      <p><span class="label">Orari</span><br><span id="c-hours"></span><br><span id="c-closed"></span></p>
+    </div>
+    <div class="social">
+      <a id="c-fb" target="_blank" rel="noopener" href="#">Facebook</a>
+      <a id="c-ig" target="_blank" rel="noopener" href="#">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap">Piccolo Mondo © <span id="year"></span></div></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — Arbia, Siena</title>
+<meta name="description" content="Piccolo Mondo — Pizzeria &amp; Trattoria dal 1985, Arbia (Siena).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript>Questo menu richiede JavaScript per essere visualizzato. / This menu requires JavaScript to be displayed.</noscript>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="#top">Piccolo Mondo</a>
+    <nav class="main-nav" aria-label="Navigazione principale">
+      <a href="#menu" data-i18n="nav_menu">Menu</a>
+      <a href="#allergeni" data-i18n="nav_allergeni">Allergeni</a>
+      <a href="#contatti" data-i18n="nav_contatti">Contatti</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Lingua / Language">
+      <button type="button" id="lang-it" aria-pressed="true">IT</button>
+      <button type="button" id="lang-en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow" data-i18n="hero_eyebrow">dal 1985</p>
+    <h1 class="hero-title">Piccolo Mondo</h1>
+    <p class="hero-tagline" id="hero-tagline"></p>
+    <a class="hero-cta" href="#menu" data-i18n="hero_cta">Scopri il menu</a>
+  </section>
+
+  <section class="menu-section" id="menu" aria-labelledby="menu-heading">
+    <h2 class="section-title" id="menu-heading" data-i18n="menu_title">Menu</h2>
+    <div id="menu-categories"><!-- rendered by app.js --></div>
+  </section>
+
+  <section class="info-section" id="contatti" aria-labelledby="contatti-heading">
+    <h2 class="section-title" id="contatti-heading" data-i18n="contatti_title">Contatti</h2>
+    <dl class="contact-list" id="contact-list"><!-- rendered by app.js --></dl>
+    <div class="social-links" id="social-links"><!-- rendered by app.js --></div>
+  </section>
+
+  <section class="info-section" id="allergeni" aria-labelledby="allergeni-heading">
+    <h2 class="section-title" id="allergeni-heading" data-i18n="allergeni_title">Allergeni</h2>
+    <p class="allergeni-text" id="allergeni-text"></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p id="footer-text"></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

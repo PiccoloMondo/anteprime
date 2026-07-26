@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — Anteprime del nuovo sito</title>
+<meta name="description" content="Bozze del nuovo sito di Piccolo Mondo, Arbia (Siena).">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-garamond-300-normal.woff2') format('woff2');font-weight:300;font-display:swap;}
+  @font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-garamond-400-normal.woff2') format('woff2');font-weight:400;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('assets/fonts/inter-400-normal.woff2') format('woff2');font-weight:400;font-display:swap;}
+  @font-face{font-family:'Inter';src:url('assets/fonts/inter-500-normal.woff2') format('woff2');font-weight:500;font-display:swap;}
+
+  :root{
+    --bg:#0e0e0d; --bg-soft:#161615; --line:#2a2a28;
+    --text:#e9e6df; --text-dim:#928d84; --accent:#c9a15a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.6; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px;}
+
+  header{padding:72px 20px 40px;text-align:center;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 18px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+    font-size:clamp(2.4rem,7vw,4rem);margin:0;letter-spacing:.01em;
+  }
+  .sub{color:var(--text-dim);margin:16px auto 0;max-width:34rem;font-size:1rem;}
+
+  h2.group{
+    font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+    font-size:1.5rem;margin:64px 0 6px;letter-spacing:.02em;
+  }
+  .group-note{color:var(--text-dim);font-size:.9rem;margin:0 0 28px;}
+
+  .grid{
+    display:grid;gap:18px;grid-template-columns:1fr;
+    list-style:none;padding:0;margin:0;
+  }
+  @media (min-width:640px){ .grid{grid-template-columns:1fr 1fr;} }
+  @media (min-width:1000px){ .grid{grid-template-columns:1fr 1fr 1fr;} }
+
+  .card{
+    display:block;text-decoration:none;color:inherit;
+    background:var(--c-bg);border:1px solid var(--c-line);
+    border-radius:3px;padding:26px 24px 22px;min-height:190px;
+    position:relative;transition:transform .18s ease,border-color .18s ease;
+  }
+  .card:hover,.card:focus-visible{transform:translateY(-3px);border-color:var(--c-accent);}
+  .card:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .card .num{
+    font-size:.7rem;letter-spacing:.2em;color:var(--c-dim);
+  }
+  .card h3{
+    font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+    font-size:1.75rem;margin:6px 0 8px;color:var(--c-accent);letter-spacing:.01em;
+  }
+  .card p{margin:0;color:var(--c-dim);font-size:.88rem;line-height:1.5;}
+  .card .palette{display:flex;gap:6px;margin-top:18px;}
+  .card .palette i{
+    width:15px;height:15px;border-radius:50%;display:block;
+    border:1px solid rgba(255,255,255,.14);
+  }
+  .card .go{
+    margin-top:16px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--c-accent);display:inline-block;
+  }
+
+  footer{
+    margin-top:80px;border-top:1px solid var(--line);
+    padding:26px 20px 60px;text-align:center;color:var(--text-dim);font-size:.82rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Piccolo Mondo · Arbia</p>
+  <h1>Anteprime del nuovo sito</h1>
+  <p class="sub">Queste sono delle bozze. Toccane una per aprirla e provarla — poi dimmi quale ti piace di più.</p>
+</header>
+
+<main class="wrap">
+
+  <h2 class="group">Nuove proposte</h2>
+  <p class="group-note">Dieci varianti, tutte scure, con le sezioni del menu ben separate.</p>
+  <ul class="grid">
+
+    <li><a class="card" href="08-oliva/" style="--c-bg:#171a15;--c-line:#2f352a;--c-accent:#b9c39a;--c-dim:#a3a396;">
+      <span class="num">08</span><h3>Oliva</h3>
+      <p>Verde oliva e salvia. Capitoli molto arieggiati, piatti su due colonne.</p>
+      <span class="palette"><i style="background:#171a15"></i><i style="background:#b9c39a"></i><i style="background:#ece9df"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="09-bosco/" style="--c-bg:#101613;--c-line:#26332c;--c-accent:#d8c48a;--c-dim:#9aa79d;">
+      <span class="num">09</span><h3>Bosco</h3>
+      <p>Verde pino e oro pallido. Ogni portata è una fascia a tutta larghezza.</p>
+      <span class="palette"><i style="background:#101613"></i><i style="background:#d8c48a"></i><i style="background:#e9e7df"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="10-brace/" style="--c-bg:#17120f;--c-line:#33271f;--c-accent:#c9744a;--c-dim:#a8988c;">
+      <span class="num">10</span><h3>Brace</h3>
+      <p>Caffè scuro e brace. Capitoli numerati, il titolo resta fisso mentre scorri.</p>
+      <span class="palette"><i style="background:#17120f"></i><i style="background:#c9744a"></i><i style="background:#efe6dd"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="11-inchiostro/" style="--c-bg:#0f0f0e;--c-line:#2b2b29;--c-accent:#e8e4da;--c-dim:#8d8b84;">
+      <span class="num">11</span><h3>Inchiostro</h3>
+      <p>Nero e avorio, senza nessun colore. Solo tipografia e tanto spazio.</p>
+      <span class="palette"><i style="background:#0f0f0e"></i><i style="background:#8d8b84"></i><i style="background:#e8e4da"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="12-prugna/" style="--c-bg:#171016;--c-line:#332432;--c-accent:#c9a0a6;--c-dim:#a2949e;">
+      <span class="num">12</span><h3>Prugna</h3>
+      <p>Melanzana e rosa antico. Titolo della sezione a fianco dei piatti.</p>
+      <span class="palette"><i style="background:#171016"></i><i style="background:#c9a0a6"></i><i style="background:#ece4e8"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="13-ardesia/" style="--c-bg:#12161a;--c-line:#2a323b;--c-accent:#c98f63;--c-dim:#98a2ac;">
+      <span class="num">13</span><h3>Ardesia</h3>
+      <p>Grigio ardesia e rame. Una portata per schermata, scorrimento a scatti.</p>
+      <span class="palette"><i style="background:#12161a"></i><i style="background:#c98f63"></i><i style="background:#e6e8ea"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="14-cacao/" style="--c-bg:#191310;--c-line:#352a22;--c-accent:#e0cdb4;--c-dim:#a89b8d;">
+      <span class="num">14</span><h3>Cacao</h3>
+      <p>Cioccolato e crema. Sezioni a fisarmonica — comodissimo da telefono.</p>
+      <span class="palette"><i style="background:#191310"></i><i style="background:#e0cdb4"></i><i style="background:#efe7dd"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="15-mezzanotte/" style="--c-bg:#0d1220;--c-line:#232d44;--c-accent:#cdb894;--c-dim:#96a0b4;">
+      <span class="num">15</span><h3>Mezzanotte</h3>
+      <p>Blu notte e champagne. Indice laterale che ti segue mentre scorri.</p>
+      <span class="palette"><i style="background:#0d1220"></i><i style="background:#cdb894"></i><i style="background:#e8e7e3"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="16-fumo/" style="--c-bg:#141514;--c-line:#2e312e;--c-accent:#a9b5a2;--c-dim:#969c94;">
+      <span class="num">16</span><h3>Fumo</h3>
+      <p>Grigio fumo e salvia. Da telefono si sfoglia scorrendo di lato.</p>
+      <span class="palette"><i style="background:#141514"></i><i style="background:#a9b5a2"></i><i style="background:#e7e8e5"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="17-antracite/" style="--c-bg:#141414;--c-line:#2d2d2d;--c-accent:#bfa06a;--c-dim:#9c988f;">
+      <span class="num">17</span><h3>Antracite</h3>
+      <p>Antracite e ottone. Ogni portata si apre con una fascia-copertina.</p>
+      <span class="palette"><i style="background:#141414"></i><i style="background:#bfa06a"></i><i style="background:#e9e6e0"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+  </ul>
+
+  <h2 class="group">Bozze precedenti</h2>
+  <p class="group-note">Le prime versioni, tenute per confronto.</p>
+  <ul class="grid">
+
+    <li><a class="card" href="03-notte-elegante/" style="--c-bg:#14120f;--c-line:#332e26;--c-accent:#c9a15a;--c-dim:#a9a196;">
+      <span class="num">03</span><h3>Notte Elegante</h3>
+      <p>Nero caldo e oro. Menu a schede.</p>
+      <span class="palette"><i style="background:#14120f"></i><i style="background:#c9a15a"></i><i style="background:#ece6d9"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="04-sera/" style="--c-bg:#161310;--c-line:#332c24;--c-accent:#c08f4e;--c-dim:#a79d90;">
+      <span class="num">04</span><h3>Sera</h3>
+      <p>Caffè e ottone. Indice laterale, tutto in un'unica scorsa.</p>
+      <span class="palette"><i style="background:#161310"></i><i style="background:#c08f4e"></i><i style="background:#efe8dc"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="05-notte-blu/" style="--c-bg:#0e141d;--c-line:#243040;--c-accent:#cdb894;--c-dim:#9aa3ae;">
+      <span class="num">05</span><h3>Notte Blu</h3>
+      <p>Blu notte. Apertura a tutto schermo, sezioni a fisarmonica.</p>
+      <span class="palette"><i style="background:#0e141d"></i><i style="background:#cdb894"></i><i style="background:#e8e6e1"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+    <li><a class="card" href="06-carta/" style="--c-bg:#171a15;--c-line:#2f352a;--c-accent:#b9c39a;--c-dim:#a3a396;">
+      <span class="num">06</span><h3>Carta</h3>
+      <p>Stessi colori di “Oliva”, ma molto più fitto. Da confrontare con la 08.</p>
+      <span class="palette"><i style="background:#171a15"></i><i style="background:#b9c39a"></i><i style="background:#ece9df"></i></span>
+      <span class="go">Apri →</span></a></li>
+
+  </ul>
+
+</main>
+
+<footer>
+  Piccolo Mondo — Arbia (Siena) · pagina di anteprima, non pubblicata
+</footer>
+
+</body>
+</html>

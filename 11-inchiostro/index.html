@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piccolo Mondo — Pizzeria &amp; Trattoria, Arbia (Siena)</title>
+<meta name="description" content="Piccolo Mondo — pizzeria e trattoria ad Arbia (Siena) dal 1985.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="mark" href="#top">Piccolo&nbsp;Mondo</a>
+    <nav class="nav" aria-label="Principale">
+      <a href="#menu" data-i18n="nav_menu">Menu</a>
+      <a href="#contatti" data-i18n="nav_contatti">Contatti</a>
+      <a href="#allergeni" data-i18n="nav_allergeni">Allergeni</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Lingua" id="langGroup">
+      <span class="lang-label" data-i18n="lang_toggle_label" id="langLabel">Lingua</span>
+      <button type="button" class="lang-btn" data-lang="it" aria-pressed="true">IT</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<noscript>
+  <p class="noscript wrap">Il menu di questo sito viene generato con JavaScript. Attiva JavaScript per
+  consultarlo, oppure telefona allo 0577 364208. — This menu is rendered with JavaScript. Please
+  enable it, or call 0577 364208.</p>
+</noscript>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="hero_eyebrow">dal 1985</p>
+      <h1 class="wordmark">Piccolo<br>Mondo</h1>
+      <p class="tagline" id="heroTagline"></p>
+      <p><a class="cta" href="#menu" data-i18n="hero_cta">Scopri il menu</a></p>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menuTitle">
+    <div class="wrap">
+      <h2 class="section-title" id="menuTitle" data-i18n="menu_title">Menu</h2>
+      <div id="menuRoot"></div>
+    </div>
+  </section>
+
+  <section class="contatti" id="contatti" aria-labelledby="contattiTitle">
+    <div class="wrap">
+      <h2 class="section-title" id="contattiTitle" data-i18n="contatti_title">Contatti</h2>
+      <dl class="facts">
+        <dt data-i18n="label_address">Indirizzo</dt>
+        <dd><a id="addrLink" href="#" rel="noopener noreferrer" target="_blank"></a></dd>
+        <dt data-i18n="label_phone">Telefono</dt>
+        <dd><a id="phoneLink" href="#"></a></dd>
+        <dt data-i18n="label_hours">Orari</dt>
+        <dd><span id="hours"></span><br><span class="dim" id="closed"></span></dd>
+        <dt data-i18n="label_follow">Seguici</dt>
+        <dd class="socials">
+          <a id="fbLink" href="#" rel="noopener noreferrer" target="_blank">Facebook</a>
+          <a id="igLink" href="#" rel="noopener noreferrer" target="_blank">Instagram</a>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="allergeni" id="allergeni" aria-labelledby="allergeniTitle">
+    <div class="wrap">
+      <h2 class="small-title" id="allergeniTitle" data-i18n="allergeni_title">Allergeni</h2>
+      <p class="fineprint" data-i18n="allergeni_text"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><span>Piccolo Mondo</span> <span aria-hidden="true">·</span> Arbia (Siena) <span aria-hidden="true">·</span> <span id="year"></span></p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
