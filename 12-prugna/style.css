@@ -70,10 +70,10 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  /* clip, not hidden: `overflow:hidden` would create a scroll container
-     and break position:sticky on the category titles. */
-  overflow-x: clip;
 }
+/* NB: no overflow-x on html/body — it would turn the root into a scroll
+   container and break position:sticky on the header and category titles.
+   Nothing here is wider than the viewport, so it isn't needed. */
 
 body {
   margin: 0;
@@ -82,7 +82,6 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
-  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -196,15 +195,18 @@ a { color: inherit; }
 .lang button[aria-pressed="true"] { color: var(--accent); }
 .lang-sep { color: var(--line); font-size: 0.7rem; }
 
-@media (max-width: 599px) {
-  .nav a { padding: 14px 7px; font-size: 0.68rem; letter-spacing: 0.1em; }
-  .mark { font-size: 1.02rem; }
-  .lang { padding-left: 5px; margin-left: 1px; }
-  .lang button { min-width: 30px; }
+/* Narrow screens: the wordmark lives in the hero, so the header row is
+   given over to navigation — the useful thing once you've scrolled. */
+@media (max-width: 699px) {
+  .mark { display: none; }
+  .nav { margin-left: 0; margin-right: auto; }
+  .nav a { padding: 14px 7px; font-size: 0.65rem; letter-spacing: 0.09em; }
+  .lang { padding-left: 6px; margin-left: 2px; }
+  .lang button { min-width: 30px; padding: 0 2px; }
 }
 
-@media (max-width: 380px) {
-  .nav a[data-nav="allergeni"] { display: none; }
+@media (max-width: 359px) {
+  .nav a { padding: 14px 5px; letter-spacing: 0.06em; }
 }
 
 .noscript {
@@ -260,8 +262,8 @@ a { color: inherit; }
 
 .hero-rule {
   margin: 34px 0 0;
-  color: var(--line);
-  font-size: 0.5rem;
+  color: #6b5068;           /* decorative only */
+  font-size: 0.58rem;
   letter-spacing: 0.4em;
 }
 

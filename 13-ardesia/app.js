@@ -5,7 +5,7 @@
   "use strict";
 
   var lang = getLang();
-  var observer = null;
+  var spy = null;
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -150,33 +150,42 @@
 
   /* ---------- active-category spy ---------- */
 
+  /* Marks the category currently crossing a probe line just under the sticky
+     header. Plain scroll maths — no observers, no animation. */
   function wireSpy() {
-    if (observer) observer.disconnect();
-    if (!("IntersectionObserver" in window)) return;
-
-    var links = {};
-    var anchors = document.querySelectorAll(".cat-index a");
-    for (var i = 0; i < anchors.length; i++) {
-      links[anchors[i].getAttribute("data-cat")] = anchors[i];
+    if (spy) {
+      window.removeEventListener("scroll", spy);
+      window.removeEventListener("resize", spy);
     }
 
-    observer = new IntersectionObserver(function (entries) {
-      for (var j = 0; j < entries.length; j++) {
-        var e = entries[j];
-        var key = e.target.id.replace(/^cat-/, "");
-        var link = links[key];
-        if (!link) continue;
-        if (e.isIntersecting) {
-          for (var k in links) {
-            if (Object.prototype.hasOwnProperty.call(links, k)) links[k].removeAttribute("aria-current");
-          }
-          link.setAttribute("aria-current", "true");
-        }
-      }
-    }, { rootMargin: "-15% 0px -70% 0px", threshold: 0 });
-
+    var links = document.querySelectorAll(".cat-index a");
     var cats = document.querySelectorAll(".cat");
-    for (var m = 0; m < cats.length; m++) observer.observe(cats[m]);
+    if (!links.length || !cats.length) return;
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var probe = Math.max(80, window.innerHeight * 0.25);
+      var active = 0;
+      for (var i = 0; i < cats.length; i++) {
+        if (cats[i].getBoundingClientRect().top <= probe) active = i;
+      }
+      for (var j = 0; j < links.length; j++) {
+        if (j === active) links[j].setAttribute("aria-current", "true");
+        else links[j].removeAttribute("aria-current");
+      }
+    }
+
+    spy = function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", spy, { passive: true });
+    window.addEventListener("resize", spy, { passive: true });
+    update();
   }
 
   /* ---------- language toggle ---------- */

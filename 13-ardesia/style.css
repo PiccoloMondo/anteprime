@@ -40,7 +40,7 @@
 
   --wrap: 820px;
   --pad: 20px;
-  --header-h: 62px;
+  --header-h: 96px;
   --gap-cat: 72px;    /* space *inside* a category before its content */
   --gap-between: 72px;
 }
@@ -105,30 +105,32 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 
+/* Mobile: two tidy rows — [brand | lang] then [nav]. Never a third row. */
 .bar {
   max-width: var(--wrap);
   margin: 0 auto;
-  min-height: var(--header-h);
-  padding: 6px var(--pad);
-  display: flex;
+  padding: 0 var(--pad);
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 12px 18px;
-  flex-wrap: wrap;
+  column-gap: 12px;
 }
 
 .brand {
   text-decoration: none;
   display: flex; flex-direction: column;
   line-height: 1.15;
-  margin-right: auto;
-  padding: 6px 0;
+  padding: 8px 0;
+  min-width: 0;
 }
 .brand-name {
   font-family: var(--serif);
   font-size: 1.06rem;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 .brand-since {
+  display: none;
   font-family: var(--sans);
   font-weight: 300;
   font-size: 0.62rem;
@@ -137,22 +139,45 @@ a { color: inherit; }
   color: var(--text-dim);
 }
 
+.brand { grid-row: 1; grid-column: 1; }
+.lang  { grid-row: 1; grid-column: 2; }
+.site-nav {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+}
 .site-nav ul {
   list-style: none; margin: 0; padding: 0;
-  display: flex; gap: 4px; flex-wrap: wrap;
+  display: flex; gap: 0 2px;
+  justify-content: space-between;
 }
 .site-nav a {
-  display: flex; align-items: center;
-  min-height: 44px; padding: 0 10px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 0 6px;
   font-family: var(--sans);
   font-weight: 300;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-dim);
   text-decoration: none;
+  white-space: nowrap;
 }
 .site-nav a:hover { color: var(--text); }
+
+@media (min-width: 720px) {
+  .bar {
+    grid-template-columns: 1fr auto auto;
+    min-height: var(--header-h);
+    column-gap: 24px;
+  }
+  .brand-since { display: block; }
+  .brand { grid-row: 1; grid-column: 1; }
+  .site-nav { grid-row: 1; grid-column: 2; border-top: 0; }
+  .lang { grid-row: 1; grid-column: 3; }
+  .site-nav ul { gap: 4px; }
+  .site-nav a { font-size: 0.7rem; letter-spacing: 0.2em; padding: 0 10px; min-height: 44px; }
+}
 
 .lang { display: flex; align-items: center; gap: 2px; }
 .lang-sep { color: var(--line); font-family: var(--sans); font-size: 0.8rem; }
@@ -291,7 +316,8 @@ a { color: inherit; }
 .cat {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
-  scroll-margin-top: var(--header-h);
+  /* No scroll-margin here: html's scroll-padding-top already insets both the
+     snap edge and #anchor jumps by the sticky header height. */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
